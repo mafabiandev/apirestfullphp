@@ -36,7 +36,7 @@ class PostController{
 
 		if(isset($data["password_user"]) && $data["password_user"] != null){
 
-			$crypt = crypt($data["password_user"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+			$crypt = crypt($data["password_user"], '$2a$07$clave_asignada_por_usuario$');
 
 			$data["password_user"] = $crypt;
 
@@ -63,7 +63,7 @@ class PostController{
 			Encriptamos la contraseña
 			=============================================*/
 
-			$crypt = crypt($data["password_user"], '$2a$07$azybxcags23425sdg23sdfhsd$');
+			$crypt = crypt($data["password_user"], '$2a$07$clave_asignada_por_usuario$');
 
 			if($response[0]->password_user == $crypt){
 
@@ -72,7 +72,7 @@ class PostController{
 				=============================================*/
 
 				$time = time();
-				$key = "azscdvfbgnhmjkl1q2w3e4r5t6y7u8i9o";
+				$key = "clave_asignada_por_usuario";
 
 				$token = array(
 
